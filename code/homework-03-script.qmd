@@ -1,0 +1,25 @@
+---
+title: "homework-03-script"
+author: "Claire Timm"
+date: "2026-03-01"
+format: html
+editor: visual
+message: false # use this to make sure messages don't show up
+  warning: false # use this to make sure warnings don't show up
+---
+
+# Set up 
+
+```{r}
+#| label: packages and data
+
+#read in packages here
+library(tidyverse)
+library(here)
+library(janitor)
+library(readxl)
+
+#read in data here
+salinity <- read_csv("data/salinity-pickleweed.csv")
+```
+
