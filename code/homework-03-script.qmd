@@ -8,7 +8,7 @@ message: false # use this to make sure messages don't show up
   warning: false # use this to make sure warnings don't show up
 ---
 
-# Set up 
+# Part 1. Set up tasks
 
 ```{r}
 #| label: packages and data
@@ -22,4 +22,46 @@ library(readxl)
 #read in data here
 salinity <- read_csv("data/salinity-pickleweed.csv")
 ```
+
+# Part 2. Problems
+
+## Problem 1. Slough soil salinity
+
+### a.
+
+To determine the strength of the relationship between salinity (electrical conductivity in mS/cm) and California pickleweed biomass (g), we can run a Pearson’s correlation and a Spearman’s rank correlation. A Pearson’s correlation test allows us to see how two variables are related to each other and what strength (strong, moderate, weak, or none) this relationship is. A Spearman rank correlation measures the strength of a monotonic relationship between variables based on ranked values, this test doesn’t require normality so it stays accurate even with outliers. 
+
+### b. 
+
+### c. 
+
+### d. 
+
+### e. 
+
+### f. 
+
+## Problem 2. Personal data 
+### a. 
+
+### b. 
+
+## Problem 3. Affective visualization 
+### a. 
+
+### b. 
+
+### d. 
+
+### e. 
+
+## Problem 4. Statistical critique 
+#### a. 
+
+### b. 
+
+### c. 
+
+### d. 
+
 
