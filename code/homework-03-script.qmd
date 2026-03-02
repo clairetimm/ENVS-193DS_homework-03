@@ -33,6 +33,19 @@ To determine the strength of the relationship between salinity (electrical condu
 
 ### b. 
 
+```{r}
+#| label: salinity and biomass plot
+#ggplot base 
+ggplot(data = salinity, #starting data frame
+       aes(x = salinity_mS_cm, #makes x-axis salinity
+           y = pickleweed)) + #makes y-axis biomass
+  geom_point() + #adds data points
+  labs(x = "Salinity (mS/cm)", #adds label to x-axis
+       y = "Pickleweed biomass (g)", #adds label to y-axis
+       title = "As salinity increases, so does pickleweed biomass") #adds graph title 
+```
+
+
 ### c. 
 
 ### d. 
