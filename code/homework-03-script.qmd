@@ -210,6 +210,10 @@ For my personal project that analyzes screen time and sleep duration, I could cr
 
 #### a.
 
+The authors are investigating if relocating tiger sharks found on beaches will revisit beaches more than sharks found at other locations in the marine park. The statistical test used is a Generalized Linear Model with a binomial distribution. The response variable is the movement of tiger sharks once tagged to beaches or elsewhere and the predictor variable is the tagging location of sharks, either found at beaches or farther away in the Marine Park.
+
+![](images/clipboard-293861519.png)
+
 ### b.
 
 ### c.
