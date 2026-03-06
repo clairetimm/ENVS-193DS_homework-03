@@ -1,23 +1,24 @@
 ---
-title: "homework-03-script"
+title: "Homework 3"
 author: "Claire Timm"
 date: "2026-03-01"
 format: html
 editor: visual
-message: false # use this to make sure messages don't show up
-  warning: false # use this to make sure warnings don't show up
 ---
 
 # Part 1. Set up tasks
 
 ```{r}
 #| label: packages and data
+#| message: false
+#| warning: false
 
 #read in packages here
 library(tidyverse)
 library(here)
 library(janitor)
 library(readxl)
+library(ggeffects)
 
 #read in data here
 salinity <- read_csv("data/salinity-pickleweed.csv")
@@ -29,52 +30,89 @@ salinity <- read_csv("data/salinity-pickleweed.csv")
 
 ### a.
 
-To determine the strength of the relationship between salinity (electrical conductivity in mS/cm) and California pickleweed biomass (g), we can run a Pearson’s correlation and a Spearman’s rank correlation. A Pearson’s correlation test allows us to see how two variables are related to each other and what strength (strong, moderate, weak, or none) this relationship is. A Spearman rank correlation measures the strength of a monotonic relationship between variables based on ranked values, this test doesn’t require normality so it stays accurate even with outliers. 
+To determine the strength of the relationship between salinity (electrical conductivity in mS/cm) and California pickleweed biomass (g), we can run a Pearson’s correlation and a Spearman’s rank correlation. A Pearson’s correlation test allows us to see how two continuous variables are related to each other and what strength (strong, moderate, weak, or none) this relationship is. A Spearman rank correlation measures the strength of a monotonic relationship between variables based on ranked values, this test doesn’t require normality so it stays accurate even with outliers.
 
-### b. 
+### b.
 
 ```{r}
 #| label: salinity and biomass plot
+#| message: false
+#| warning: false
+
 #ggplot base 
 ggplot(data = salinity, #starting data frame
        aes(x = salinity_mS_cm, #makes x-axis salinity
            y = pickleweed)) + #makes y-axis biomass
-  geom_point() + #adds data points
-  labs(x = "Salinity (mS/cm)", #adds label to x-axis
+  geom_point(color = "deeppink4") + #adds data points in green
+  labs(x = "Soil salinity (mS/cm)", #adds label to x-axis
        y = "Pickleweed biomass (g)", #adds label to y-axis
-       title = "As salinity increases, so does pickleweed biomass") #adds graph title 
+       title = "As soil salinity increases, so does pickleweed biomass") + #adds graph title 
+  theme_minimal() #changes graph theme
 ```
 
+### c.
 
-### c. 
+#### Check assumptions:
 
-### d. 
+```{r}
+#| label: checking assumptions
+#| message: false
+#| warning: false
 
-### e. 
+salinity_model <- lm( #create object to store information
+  pickleweed ~ salinity_mS_cm, #formula: response ~ predictor variable
+  data = salinity) #data frame used
 
-### f. 
+summary(salinity_model) #display summary
 
-## Problem 2. Personal data 
-### a. 
+#base R residuals
+par(mfrow = c(2, 2)) #create a 2x2 output gride for diagnostic plots
+plot(salinity_model) #plot salinity_model information
+```
 
-### b. 
+The assumptions I checked for a Pearson correlation model began with a Q-Q Residuals plot assesing normally distributed residuals using QQ plots, here it shows the quantiles following a straight line of the theoretical normal quantiles with only a slight deviation at the end, proving to be normally distributed of residuals. The Residuals vs Fitted plot this checks for homoscedasticity (constant variance) which is proven due to the residuals being somewhat random and evenly spread around the horizontal dotted line, the Scale-Location plot assesses the same but uses the square root of the standardized residuals and this plot also proved there to be constant variance. Lastly in Residuals vs Leverage, this plot determines if there are any outliers influencing the model with Cook's distance, since there aren't any points outside the dotted lines this means there aren't any outliers that would influence the model, which meets all the assumptions for Pearson's correlation.
 
-## Problem 3. Affective visualization 
-### a. 
+#### Run test:
 
-### b. 
+```{r}
+#| label: run correlation tests
+#| message: false
+#| warning: false
 
-### d. 
+cor.test(salinity$pickleweed, salinity$salinity_mS_cm,
+         method = "pearson")
+```
 
-### e. 
+### d.
 
-## Problem 4. Statistical critique 
-#### a. 
+To determine the strength of the relationship between pickleweed biomass and soil salinity, I used a Pearson’s correlation test since these two continuous variables are related to each other and I wanted to evluate the strength of this relationship and all the assumptions were met for this test. I found a moderate positive relationship between soil salinity and pickleweed biomass (Pearson's r = 0.53, t(21) = 2.9, p = 0.01, $\alpha$ = 0.05).
 
-### b. 
+### e.
 
-### c. 
+### f.
 
-### d. 
+## Problem 2. Personal data
 
+### a.
 
+### b.
+
+## Problem 3. Affective visualization
+
+### a.
+
+### b.
+
+### d.
+
+### e.
+
+## Problem 4. Statistical critique
+
+#### a.
+
+### b.
+
+### c.
+
+### d.
