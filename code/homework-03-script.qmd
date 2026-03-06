@@ -19,10 +19,11 @@ library(here)
 library(janitor)
 library(readxl)
 library(ggeffects)
+library(readr)
 
 #read in data here
-salinity <- read_csv("data/salinity-pickleweed.csv")
-my_data <- read_csv("data/pp_new.csv")
+salinity <- pickleweed <- read_csv(here::here("code", "data", "salinity-pickleweed.csv"))
+my_data <- read_csv(here::here("code", "data", "pp_new.csv"))
 ```
 
 # Part 2. Problems
@@ -142,7 +143,7 @@ ggplot(data = my_data_clean, #start with my_data_clean data frame
          labs(x = "Day of Week", #adds x-axis title
               y = "Sleep Duration (minutes)", #adds y-axis title 
               title = "Distribution of Sleep Duration by Day of the Week", #adds graph title 
-              subtitle = "(03/05/2026)",
+              subtitle = "Most recent observation: 03/05/2026",
               fill = "Day of Week") + #adds legend title 
   scale_fill_manual(values = c( #changes the color of each group
       "Monday" = "lightgoldenrod", #changes Monday data color
@@ -150,7 +151,9 @@ ggplot(data = my_data_clean, #start with my_data_clean data frame
       "Wednesday" = "lightsalmon3", #changes Wednesday data color
       "Thursday" = "lightskyblue3", #changes Thurday data color 
       "Friday" = "mediumorchid4")) + #changes Friday data color 
-  theme_minimal() #changes theme of graph 
+  theme_minimal() + #changes theme of graph 
+  theme(legend.position = "none") #removes legend
+
 ```
 
 Graph with a continuous predictor:
@@ -161,15 +164,19 @@ Graph with a continuous predictor:
 ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
        aes(x = screen_time, #x-axis is data of 'screen_time'
            y = sleep_duration)) + #y-axis is data of 'sleep_duration'
-  geom_point(color = "purple4", shape = 18, size = 3) + #changes the point color, shape, and size 
+  geom_point(color = "purple4", shape = 18, size = 3, na.rm = TRUE) + #changes the point color, shape, and size 
   labs(x = "Screen Time (minutes)", #adds x-axis title
        y = "Sleep Duration (minutes)", #adds y-axis title 
        title = "How Screen Time affects Sleep Duration", 
-       subtitle = "(03/05/2026)") + #adds a graph title 
+       subtitle = "Most recent observation: 03/05/2026") + #adds a graph title 
   theme_minimal() #changes graph theme 
 ```
 
 ### b.
+
+**Figure 1. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my indivudal observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration. (ADD DATA SOURCE??)
+
+**Figure 2. Relationshiip between daily screen time (minutes) and sleep duration (minutes).** The scatter plot graphs the relationship between daily screen time and sleep duration that night in minutes. Each purple diamond represents an observation. Screen time is on the x-axis in minutes and sleep duration is on the y-axis in minutes. The data shows the variation in sleep duration across different levels of screen time.
 
 ## Problem 3. Affective visualization
 
