@@ -182,7 +182,11 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
 
 ### a.
 
+For my personal project that analyzes step count and sleep duration, I could crochet a small "blanket" to visually show how my habits shift over the course of this quarter. Each day would have its own vertical column and I would use a dark colored yarn to represent my daily step count. This means if it was higher on a day the yarn would take up more of the vertical column and if my daily step count was lower than there would be less of the yarn. Then my sleep duration would be in a lighter color that follows the same concept and to make the blanket an even square I would use either white or black to fill in any gaps. This would create a pattern to show whether high step count clusters with more or less sleep in a visual way that is easy to interpret and meaningful.
+
 ### b.
+
+### c. 
 
 ### d.
 
