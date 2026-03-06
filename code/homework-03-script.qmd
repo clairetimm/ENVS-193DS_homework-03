@@ -214,7 +214,13 @@ The authors are investigating if relocating tiger sharks found on beaches will r
 
 ![](images/clipboard-293861519.png)
 
+The authors wrote about the results saying the "Probability of visiting beaches was greater for tiger sharks relocated from beaches than for sharks tagged elsewhere (*X^2^* = 33.66, *df* = 1, *p* \< 0.001). However, there was no effect of sex and maturity on presence at beaches (*X^2^* = 3.99, df = 3, p = 0.26). Once at beaches, weighted residency indices did not differ (Wilcoxon rank sum test, p = 0.697, W = 70) between sharks relocated from beaches (I~WR~ median and interquartile range: 0.002, 0.004) and those tagged elsewhere (I~WR~ median and interquartile range: 0.002, 0.002)."
+
 ### b.
+
+![](images/clipboard-76195506.png)
+
+This figure is shown in the paper and the authors visually represented the patterns in tiger shark visits at QSCP beaches versus non-beach stations with circular bar plots. There is a time axis that aligns with a clock around the circle (12am, 6am, 12pm, and 6pm) which I think easily allows readers to interpret this figure. Additionally the different colors represent the duration of sharks at these beaches, the light yellow representing a short visit (0-0.5 hours) while dark blue represents longer visits (\> 3 hours). Although this figure doesn't show any statistics, it mainly just visualizes the patterns of these sharks instead.
 
 ### c.
 
