@@ -182,17 +182,29 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
 
 ### a.
 
-For my personal project that analyzes step count and sleep duration, I could crochet a small "blanket" to visually show how my habits shift over the course of this quarter. Each day would have its own vertical column and I would use a dark colored yarn to represent my daily step count. This means if it was higher on a day the yarn would take up more of the vertical column and if my daily step count was lower than there would be less of the yarn. Then my sleep duration would be in a lighter color that follows the same concept and to make the blanket an even square I would use either white or black to fill in any gaps. This would create a pattern to show whether high step count clusters with more or less sleep in a visual way that is easy to interpret and meaningful.
+For my personal project that analyzes screen time and sleep duration, I could crochet a small "blanket" to visually show how my habits shift over the course of this quarter. Each day would have its own vertical column and I would use a dark colored yarn to represent my daily screen time. This means if it was higher on a day the yarn would take up more of the vertical column and if my daily screen time was lower than there would be less of the yarn. Then my sleep duration would be in a lighter color that follows the same concept and to make the blanket an even square I would use either white or black to fill in any gaps. This would create a pattern to show whether high screen time clusters with more or less sleep in a visual way that is easy to interpret and meaningful.
 
 ### b.
 
-![](images/clipboard-3921715913.jpeg)
+![](images/clipboard-1875232050.jpeg)
 
 ### c. 
 
+(insert draft)
+
 ### d.
 
+-   This piece is showing how daily screen time (minutes) affects sleep duration (minutes).
+
+-   My influences from this work drew from Lorraine Woodruff-Long’s warming strips quilt with how she shows different temperature changes with different colors. I really liked how this piece drew a lot of emotion from me when I first viewed it and I hope to do the same with my visualization.
+
+-   My work is a crocheted blanket with vertical dark green columns representing screen time for each day, then the light green yarn on top of those columns will represent the sleep duration. The longer the piece of yarn is, the longer the screen time or sleep duration is.
+
+-   My process in this is to have columns to represent each day, then using dark green yarn this will represent my screen time. The longer the strip of yarn, the higher the screen time was for that day, then on top of that will be a strip of light green yarn to represent sleep duration with the same concept. Overall this will show how each length of screen time and the sleep duration that day in a visual way that is easy to understand.
+
 ### e.
+
+[View](https://docs.google.com/presentation/d/1JEtQglbbgKO6vpzyjNLza9CP3tumNa0XM9l72nyFruo/edit?usp=sharing)
 
 ## Problem 4. Statistical critique
 
