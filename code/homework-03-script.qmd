@@ -72,7 +72,7 @@ par(mfrow = c(2, 2)) #create a 2x2 output gride for diagnostic plots
 plot(salinity_model) #plot salinity_model information
 ```
 
-The assumptions I checked for a Pearson correlation model began with a Q-Q Residuals plot assesing normally distributed residuals using QQ plots, here it shows the quantiles following a straight line of the theoretical normal quantiles with only a slight deviation at the end, proving to be normally distributed of residuals. The Residuals vs Fitted plot this checks for homoscedasticity (constant variance) which is proven due to the residuals being somewhat random and evenly spread around the horizontal dotted line, the Scale-Location plot assesses the same but uses the square root of the standardized residuals and this plot also proved there to be constant variance. Lastly in Residuals vs Leverage, this plot determines if there are any outliers influencing the model with Cook's distance, since there aren't any points outside the dotted lines this means there aren't any outliers that would influence the model, which meets all the assumptions for Pearson's correlation.
+The assumptions I checked for a Pearson correlation model began with a Q-Q Residuals plot assesing normally distributed residuals using a QQ plot, here it shows the quantiles following a straight line of the theoretical normal quantiles with only a slight deviation at the end, proving to be normally distributed residuals. The Residuals vs Fitted plot checks for homoscedasticity (constant variance) which is proven due to the residuals being somewhat random and evenly spread around the horizontal dotted line, the Scale-Location plot assesses the same but uses the square root of the standardized residuals and this plot also proved there to be constant variance. Lastly in Residuals vs Leverage, this plot determines if there are any outliers influencing the model with Cook's distance, since there aren't any points outside the dotted lines this means there aren't any outliers that would influence the model, which meets all the assumptions for Pearson's correlation.
 
 #### Run test:
 
@@ -91,7 +91,7 @@ To determine the strength of the relationship between pickleweed biomass and soi
 
 ### e.
 
-From this test it appears there is some effect of soil salinity on pickleweed biomass. As soil salinity increases, so does pickleweed biomass. To have successful pickleweed plants at this restoration site, we should test the soil's salinity along different points of the brackish slough to see where the higher areas of salinity are to plant pickleweed by the salt water.
+From this test it appears there is some effect of soil salinity on pickleweed biomass. As soil salinity increases, so does pickleweed biomass. To have successful pickleweed plants at this restoration site, we should test the soil's salinity along different points of the brackish slough to see where the higher areas of salinity are to plant pickleweed by the salt water for optimal growth.
 
 ### f.
 
@@ -174,7 +174,7 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
 
 ### b.
 
-**Figure 1. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my indivudal observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration. (ADD DATA SOURCE??)
+**Figure 1. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my indivudal observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration.
 
 **Figure 2. Relationshiip between daily screen time (minutes) and sleep duration (minutes).** The scatter plot graphs the relationship between daily screen time and sleep duration that night in minutes. Each purple diamond represents an observation. Screen time is on the x-axis in minutes and sleep duration is on the y-axis in minutes. The data shows the variation in sleep duration across different levels of screen time.
 
@@ -190,13 +190,13 @@ For my personal project that analyzes screen time and sleep duration, I could cr
 
 ### c. 
 
-(insert draft)
+Since I didn't want to crochet this before getting any feedback, the picture above in part b is a draft of what my product would look like. Please let me know any improvements or necessary changes I can make to it!
 
 ### d.
 
--   This piece is showing how daily screen time (minutes) affects sleep duration (minutes).
+-   This piece is showing how daily screen time (minutes) in blue yarn affects sleep duration (minutes) in pink yarn.
 
--   My influences from this work drew from Lorraine Woodruff-Long’s warming strips quilt with how she shows different temperature changes with different colors. I really liked how this piece drew a lot of emotion from me when I first viewed it and I hope to do the same with my visualization.
+-   My influences from this work drew from Lorraine Woodruff-Long’s warming strips quilt with how she shows different temperature changes with different colors. I really liked how this piece drew a lot of emotion from me when I first viewed it and I hope to do the same with my visualization. Additionally my mom made a crochet mood blanket last year which is what inspired me to also make this.
 
 -   My work is a crocheted blanket with vertical dark green columns representing screen time for each day, then the light green yarn on top of those columns will represent the sleep duration. The longer the piece of yarn is, the longer the screen time or sleep duration is.
 
