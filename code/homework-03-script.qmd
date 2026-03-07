@@ -32,7 +32,7 @@ my_data <- read_csv(here::here("code", "data", "pp_new.csv"))
 
 ### a.
 
-To determine the strength of the relationship between salinity (electrical conductivity in mS/cm) and California pickleweed biomass (g), we can run a Pearson’s correlation and a Spearman’s rank correlation. A Pearson’s correlation test allows us to see how two continuous variables are related to each other and what strength (strong, moderate, weak, or none) this relationship is. A Spearman rank correlation measures the strength of a monotonic relationship between variables based on ranked values, this test doesn’t require normality so it stays accurate even with outliers.
+To determine the strength of the relationship between salinity (electrical conductivity in mS/cm) and California pickleweed biomass (g), we can run a Pearson’s correlation and a Spearman’s rank correlation. A Pearson’s correlation test allows us to see how two continuous variables are related to each other and what strength (strong, moderate, weak, or none) this relationship is. A Spearman rank correlation measures the strength (strong, moderate, weak, or none) of a monotonic relationship between variables based on ranked values, this test doesn’t require normality so it stays accurate even with outliers.
 
 ### b.
 
@@ -143,7 +143,7 @@ ggplot(data = my_data_clean, #start with my_data_clean data frame
          labs(x = "Day of Week", #adds x-axis title
               y = "Sleep Duration (minutes)", #adds y-axis title 
               title = "Distribution of Sleep Duration by Day of the Week", #adds graph title 
-              subtitle = "Most recent observation: 03/05/2026",
+              subtitle = "Most recent observation: 03/05/2026", #adds a graph subtitle
               fill = "Day of Week") + #adds legend title 
   scale_fill_manual(values = c( #changes the color of each group
       "Monday" = "lightgoldenrod", #changes Monday data color
@@ -167,8 +167,8 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
   geom_point(color = "purple4", shape = 18, size = 3, na.rm = TRUE) + #changes the point color, shape, and size 
   labs(x = "Screen Time (minutes)", #adds x-axis title
        y = "Sleep Duration (minutes)", #adds y-axis title 
-       title = "How Screen Time affects Sleep Duration", 
-       subtitle = "Most recent observation: 03/05/2026") + #adds a graph title 
+       title = "How Screen Time affects Sleep Duration", #adds a graph title 
+       subtitle = "Most recent observation: 03/05/2026") + #adds a graph subtitle 
   theme_minimal() #changes graph theme 
 ```
 
