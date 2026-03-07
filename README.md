@@ -11,3 +11,5 @@ There are two folders, a 'code' folder and a 'data' folder. All code is in the '
 In the cold folder, there is a file called 'homework-03-script_files' that contains all code for this analysis.
 
 ## Rendered Output
+
+The rendered output for the code in this repository [here](https://clairetimm.github.io/ENVS-193DS_homework-03/code/homework-03-script.html)
