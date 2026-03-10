@@ -2,7 +2,12 @@
 title: "Homework 3"
 author: "Claire Timm"
 date: "2026-03-01"
-format: html
+format: 
+  html: 
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    smooth-scroll: true
 editor: visual
 ---
 
@@ -188,7 +193,7 @@ For my personal project that analyzes screen time and sleep duration, I could cr
 
 ![](images/clipboard-1875232050.jpeg)
 
-### c. 
+### c.
 
 Since I didn't want to crochet this before getting any feedback, the picture above in part b is a draft of what my product would look like. Please let me know any improvements or necessary changes I can make to it!
 
