@@ -69,7 +69,7 @@ ggplot(data = salinity, #starting data frame
 #| label: linear relationship check
 ggplot(data = salinity, #start ggplot with salinity data set
        aes(x = salinity_mS_cm, #x-axis is salinity
-           y = pickleweed)) + #y-axis is pickless biomass 
+           y = pickleweed)) + #y-axis is pickleweed biomass 
   geom_point(color = "lightblue3", #makes point color blue
              size = 2) + #increases site of points
   labs(title = "Effect of soil salinity on pickleweed biomass", #add title to graph
@@ -105,7 +105,7 @@ ggplot(data = salinity, #start with salinity data frame
        aes(sample = pickleweed)) + #use pickleweed variable only
   geom_qq(color = "darkgreen") + #adds data points in dark green
   geom_qq_line(color = "orange4") + #adds reference line in orange
-  labs(title = "Picklweed biomass distribution", #adds graph title
+  labs(title = "Pickleweed biomass distribution", #adds graph title
        x = "Pickleweed biomass (g)", #adds x-axis label
        y = "Count") + #adds y-axis label
   theme_minimal() #changes theme
@@ -130,7 +130,7 @@ cor.test(salinity$pickleweed, salinity$salinity_mS_cm,
 
 ### d.
 
-To determine the strength of the relationship between pickleweed biomass and soil salinity, I used a Pearson’s correlation test since these two continuous variables are related to each other and I wanted to evluate the strength of this relationship and all the assumptions were met for this test. I found a moderate positive relationship between soil salinity and pickleweed biomass(g) (Pearson's r = 0.53, t(21) = 2.9, p = 0.01, $\alpha$ = 0.05). This indicates that as soil salinity (mS/cm) increases that pickleweed biomass (g) also tends to increase.
+To determine the strength of the relationship between pickleweed biomass and soil salinity, I used a Pearson’s correlation test since these two continuous variables are related to each other and I wanted to evaluate the strength of this relationship and all the assumptions were met for this test. I found a moderate positive relationship between soil salinity and pickleweed biomass(g) (Pearson's r = 0.53, t(21) = 2.9, p = 0.01, $\alpha$ = 0.05). This indicates that as soil salinity (mS/cm) increases that pickleweed biomass (g) also tends to increase.
 
 ### e.
 
@@ -161,9 +161,9 @@ Cleaning and wrangling data:
 #| label: clean my data
 my_data_clean <- my_data |> #create new object for cleaned personal data
   rename(date = "Date (mm/dd/yyyy)", #renames column 'date'
-         day = "Day of Week", #renames colum 'day'
+         day = "Day of Week", #renames column 'day'
          sleep_duration = "Sleep Duration (minutes)", #renames column 'sleep_duration'
-         step_count = "Step Count", #renames colum 'step_count'
+         step_count = "Step Count", #renames column 'step_count'
          homework_duration = "Time spent on homework (minutes)", #renames column 'homework_duration'
          screen_time = "Screen Time (minutes)", #renames column 'screen_time'
          exercise_duration = "Exercise duration (minutes)", #renames_column 'exercise_duration'
@@ -180,7 +180,7 @@ ggplot(data = my_data_clean, #start with my_data_clean data frame
        aes(x = factor(day, level = order), #x-axis should be day of the week but converted in order of weekday 
            y = sleep_duration, #y-axis should be sleep duration in minutes
            fill = factor(day, level = order))) + #fills in the boxes by day of week
-  geom_boxplot() + #first layer is a boxplot
+  geom_boxplot() + #first layer is a box plot
   geom_jitter(width = 0.2, #makes the points jitter horizontally 
               height = 0) + #makes the points not jitter horizontally 
          labs(x = "Day of Week", #adds x-axis title
@@ -192,7 +192,7 @@ ggplot(data = my_data_clean, #start with my_data_clean data frame
       "Monday" = "lightgoldenrod", #changes Monday data color
       "Tuesday" = "lightpink2",  #changes Tuesday data color
       "Wednesday" = "lightsalmon3", #changes Wednesday data color
-      "Thursday" = "lightskyblue3", #changes Thurday data color 
+      "Thursday" = "lightskyblue3", #changes Thursday data color 
       "Friday" = "mediumorchid4")) + #changes Friday data color 
   theme_minimal() + #changes theme of graph 
   theme(legend.position = "none") #removes legend
@@ -217,9 +217,9 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
 
 ### b.
 
-**Figure 1. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my indivudal observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration.
+**Figure 1. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my individual observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration.
 
-**Figure 2. Relationshiip between daily screen time (minutes) and sleep duration (minutes).** The scatter plot graphs the relationship between daily screen time and sleep duration that night in minutes. Each purple diamond represents an observation. Screen time is on the x-axis in minutes and sleep duration is on the y-axis in minutes. The data shows the variation in sleep duration across different levels of screen time.
+**Figure 2. Relationship between daily screen time (minutes) and sleep duration (minutes).** The scatter plot graphs the relationship between daily screen time and sleep duration that night in minutes. Each purple diamond represents an observation. Screen time is on the x-axis in minutes and sleep duration is on the y-axis in minutes. The data shows the variation in sleep duration across different levels of screen time.
 
 ## Problem 3. Affective visualization
 
