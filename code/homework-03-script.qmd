@@ -4,11 +4,13 @@ author: "Claire Timm"
 date: "2026-03-01"
 format: 
   html: 
-    toc: true
+    toc: true #display table of contents
     toc-location: right
     toc-depth: 3
     smooth-scroll: true
 editor: visual
+message: false
+warning: false 
 ---
 
 # Part 1. Set up tasks
@@ -27,8 +29,8 @@ library(ggeffects)
 library(readr)
 
 #read in data here
-salinity <- pickleweed <- read_csv(here::here("code", "data", "salinity-pickleweed.csv"))
-my_data <- read_csv(here::here("code", "data", "pp_new.csv"))
+salinity <- pickleweed <- read_csv(here::here("data", "salinity-pickleweed.csv"))
+my_data <- read_csv(here::here("data", "pp_new.csv"))
 ```
 
 # Part 2. Problems
