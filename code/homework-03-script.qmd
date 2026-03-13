@@ -29,7 +29,7 @@ library(ggeffects)
 library(readr)
 
 #read in data here
-salinity <- pickleweed <- read_csv(here::here("data", "salinity-pickleweed.csv"))
+salinity <- read_csv(here::here("data", "salinity-pickleweed.csv"))
 my_data <- read_csv(here::here("data", "pp_new.csv"))
 ```
 
@@ -63,23 +63,59 @@ ggplot(data = salinity, #starting data frame
 
 #### Check assumptions:
 
+1. Linear relationship between variables
+
 ```{r}
-#| label: checking assumptions
-#| message: false
-#| warning: false
-
-salinity_model <- lm( #create object to store information
-  pickleweed ~ salinity_mS_cm, #formula: response ~ predictor variable
-  data = salinity) #data frame used
-
-summary(salinity_model) #display summary
-
-#base R residuals
-par(mfrow = c(2, 2)) #create a 2x2 output gride for diagnostic plots
-plot(salinity_model) #plot salinity_model information
+#| label: linear relationship check
+ggplot(data = salinity, #start ggplot with salinity data set
+       aes(x = salinity_mS_cm, #x-axis is salinity
+           y = pickleweed)) + #y-axis is pickless biomass 
+  geom_point(color = "lightblue3", #makes point color blue
+             size = 2) + #increases site of points
+  labs(title = "Effect of soil salinity on pickleweed biomass", #add title to graph
+       x = "Soil salinity (mS/cm)", #add x-axis label
+       y = "Pickleweed biomass (g)") + #add y-axis label 
+  theme_minimal() #changes theme of graph 
 ```
 
-The assumptions I checked for a Pearson correlation model began with a Q-Q Residuals plot assesing normally distributed residuals using a QQ plot, here it shows the quantiles following a straight line of the theoretical normal quantiles with only a slight deviation at the end, proving to be normally distributed residuals. The Residuals vs Fitted plot checks for homoscedasticity (constant variance) which is proven due to the residuals being somewhat random and evenly spread around the horizontal dotted line, the Scale-Location plot assesses the same but uses the square root of the standardized residuals and this plot also proved there to be constant variance. Lastly in Residuals vs Leverage, this plot determines if there are any outliers influencing the model with Cook's distance, since there aren't any points outside the dotted lines this means there aren't any outliers that would influence the model, which meets all the assumptions for Pearson's correlation.
+2. Variables are continuous 
+
+```{r}
+#| label: continuous variable check
+str(salinity) #check that data is numeric, continuous values 
+```
+
+3. Variables are normally distributed (though this is up for debate)
+
+```{r}
+#| label: normally distributed check on soil salinity
+ggplot(data = salinity, #start with salinity data frame
+       aes(sample = salinity_mS_cm)) + #use salinity_mS_cm variable only
+  geom_qq(color = "brown") + #adds data points in brown
+  geom_qq_line(color = "pink2") + #adds reference line in pink
+  labs(title = "Soil salinity distribution", #adds graph title
+       x = "Soil salinity (mS/cm)", #adds x-axis label 
+       y = "Count") + #adds y-axis label 
+  theme_minimal() #changes theme 
+```
+
+```{r}
+#| label: normally distributed check on pickleweed biomass
+ggplot(data = salinity, #start with salinity data frame
+       aes(sample = pickleweed)) + #use pickleweed variable only
+  geom_qq(color = "darkgreen") + #adds data points in dark green
+  geom_qq_line(color = "orange4") + #adds reference line in orange
+  labs(title = "Picklweed biomass distribution", #adds graph title
+       x = "Pickleweed biomass (g)", #adds x-axis label
+       y = "Count") + #adds y-axis label
+  theme_minimal() #changes theme
+```
+
+4. Independent Observations 
+
+This assumption is made because each observation was made by plucking an individual pickleweed plant out of the ground. Therefore each data point will be recorded from a different area, meaning no repeated areas were sampled. 
+
+I checked the assumptions for a Pearson's correlation test by first confirming there is a linear relationship between variables by visually checking this with a scatter plot. I checked that variables are continuous using the function 'str()' which confirmed that both variables are stored as numeric values and can take the form of decimal values, proving the data is continuous, then to check that the variables are normally distributed I created an individual QQ plot for each variable to see if the data points follow the reference line and saw that they did with only minor deviations resulting in confirming that the variables are normally distributed. The last assumption is that the data has independent observations which is concluded due to the experiment design, stating that pickleweed plants were plucked out of the ground in different plot areas, so all the assumptions for a Pearson's correlation test are met. 
 
 #### Run test:
 
